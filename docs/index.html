@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>绿的谐波 688017.SH 股票分析</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">688017.SH · 科创板 · 机械基件</p>
+        <h1>绿的谐波股票分析</h1>
+        <p class="subtitle">技术面、K 线、基本面与日线数据复盘</p>
+      </div>
+      <div class="market-stamp">
+        <span id="latest-date">--</span>
+        <strong id="latest-close">--</strong>
+        <small id="latest-change">--</small>
+      </div>
+    </header>
+
+    <main>
+      <section class="notice">
+        <span>学习用途</span>
+        <p id="disclaimer">本页面仅用于量化学习与数据分析练习，不构成任何投资建议。</p>
+      </section>
+
+      <nav class="tabs" aria-label="分析视图">
+        <button class="tab-button active" type="button" data-tab="overview">总览</button>
+        <button class="tab-button" type="button" data-tab="technical">技术面</button>
+        <button class="tab-button" type="button" data-tab="kline">K 线</button>
+        <button class="tab-button" type="button" data-tab="fundamental">基本面</button>
+        <button class="tab-button" type="button" data-tab="data">数据</button>
+      </nav>
+
+      <section class="panel active" id="overview">
+        <div class="metric-grid">
+          <article class="metric">
+            <span>近一年涨幅</span>
+            <strong id="one-year-return">--</strong>
+          </article>
+          <article class="metric">
+            <span>20 日涨幅</span>
+            <strong id="return-20d">--</strong>
+          </article>
+          <article class="metric">
+            <span>60 日涨幅</span>
+            <strong id="return-60d">--</strong>
+          </article>
+          <article class="metric">
+            <span>最大回撤</span>
+            <strong id="max-drawdown">--</strong>
+          </article>
+          <article class="metric">
+            <span>趋势标签</span>
+            <strong id="trend-label">--</strong>
+          </article>
+          <article class="metric">
+            <span>最新市值</span>
+            <strong id="market-cap">--</strong>
+          </article>
+        </div>
+
+        <div class="two-column">
+          <section class="chart-block">
+            <div class="section-heading">
+              <h2>价格与技术指标</h2>
+              <a href="data/688017_daily.csv" download>下载 CSV</a>
+            </div>
+            <img src="assets/688017_technical.png" alt="绿的谐波收盘价、均线、RSI 和 MACD 技术指标图" />
+          </section>
+          <aside class="analysis-block">
+            <h2>结论摘要</h2>
+            <ul id="overview-summary"></ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="panel" id="technical">
+        <div class="two-column">
+          <section class="chart-block">
+            <div class="section-heading">
+              <h2>均线、RSI 与 MACD</h2>
+            </div>
+            <img src="assets/688017_technical.png" alt="绿的谐波技术指标综合图" />
+          </section>
+          <section class="analysis-block">
+            <h2>指标快照</h2>
+            <dl class="key-values" id="technical-values"></dl>
+            <h3>技术面判断</h3>
+            <ul id="technical-summary"></ul>
+          </section>
+        </div>
+      </section>
+
+      <section class="panel" id="kline">
+        <div class="two-column wide-first">
+          <section class="chart-block">
+            <div class="section-heading">
+              <h2>近 120 个交易日 K 线</h2>
+            </div>
+            <img src="assets/688017_kline.png" alt="绿的谐波近 120 个交易日 K 线图" />
+          </section>
+          <section class="analysis-block">
+            <h2>K 线解读</h2>
+            <ul id="kline-summary"></ul>
+            <div class="legend-row">
+              <span><i class="swatch red"></i>上涨 K 线</span>
+              <span><i class="swatch green"></i>下跌 K 线</span>
+              <span><i class="swatch amber"></i>均线</span>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="panel" id="fundamental">
+        <div class="two-column">
+          <section class="analysis-block">
+            <h2>公司与行业标签</h2>
+            <dl class="key-values" id="company-values"></dl>
+            <h3>基本面观察</h3>
+            <ul id="fundamental-summary"></ul>
+          </section>
+          <section class="analysis-block">
+            <h2>估值快照</h2>
+            <dl class="key-values" id="valuation-values"></dl>
+            <p class="source-note" id="data-status"></p>
+            <h3>数据来源</h3>
+            <ul class="source-list" id="source-list"></ul>
+          </section>
+        </div>
+      </section>
+
+      <section class="panel" id="data">
+        <div class="section-heading">
+          <h2>最近交易日数据</h2>
+          <a href="data/688017_daily.csv" download>下载完整 CSV</a>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>日期</th>
+                <th>开盘</th>
+                <th>最高</th>
+                <th>最低</th>
+                <th>收盘</th>
+                <th>涨跌幅</th>
+                <th>成交量</th>
+              </tr>
+            </thead>
+            <tbody id="recent-table"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span id="generated-at">--</span>
+      <span>数据源：Tushare Pro、上海证券交易所、公司官网</span>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

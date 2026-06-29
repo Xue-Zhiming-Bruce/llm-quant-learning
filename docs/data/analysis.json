@@ -1,0 +1,210 @@
+{
+  "generated_at": "2026-06-29 22:36:57",
+  "disclaimer": "本页面仅用于量化学习与数据分析练习，不构成任何投资建议。",
+  "stock": {
+    "ts_code": "688017.SH",
+    "symbol": "688017",
+    "name": "绿的谐波",
+    "area": "江苏",
+    "industry": "机械基件",
+    "market": "科创板",
+    "list_date": "20200828",
+    "display_name": "绿的谐波",
+    "business_note": "公司聚焦精密传动与谐波减速器相关产品，应用场景与机器人、自动化设备等产业链相关。"
+  },
+  "period": {
+    "start": "2025-06-30",
+    "end": "2026-06-29",
+    "sessions": 242
+  },
+  "price": {
+    "latest_date": "2026-06-29",
+    "latest_close": 361.62,
+    "latest_change_pct": -2.12,
+    "one_year_return_pct": 189.55,
+    "return_20d_pct": 18.18,
+    "return_60d_pct": 89.07,
+    "period_high_close": 428.25,
+    "period_high_date": "2026-06-08",
+    "period_low_close": 115.12,
+    "period_low_date": "2025-07-07",
+    "from_high_pct": -15.56,
+    "max_drawdown_pct": -25.37
+  },
+  "technical": {
+    "trend_label": "短线回撤",
+    "ma5": 376.76,
+    "ma20": 371.73,
+    "ma60": 289.06,
+    "ma120": 247.92,
+    "rsi14": 51.61,
+    "rsi_label": "中性区间",
+    "macd_diff": 19.034,
+    "macd_dea": 25.273,
+    "macd_hist": -12.48,
+    "macd_label": "空头动能",
+    "volatility20_pct": 110.62,
+    "volume_vs_ma20": 0.82,
+    "summary": [
+      "最新收盘价 361.62 元，过去一年区间涨幅 189.55%。",
+      "当前价格较区间最高收盘价 428.25 元回撤 15.56%。",
+      "MA20/MA60/MA120 分别为 371.73/289.06/247.92，趋势标签为「短线回撤」。",
+      "RSI14 为 51.61，处于「中性区间」；MACD 状态为「空头动能」。"
+    ]
+  },
+  "kline": {
+    "summary": [
+      "近 120 个交易日 K 线显示股价经历快速拉升后高位波动，区间最高收盘日为 2026-06-08。",
+      "最新交易日涨跌幅为 -2.12%，成交量约为 20 日均量的 0.82 倍。",
+      "红色 K 线代表收盘价高于开盘价，绿色 K 线代表收盘价低于开盘价；均线用于观察趋势方向和支撑压力。"
+    ]
+  },
+  "fundamental": {
+    "latest_daily_basic": {
+      "trade_date": "20260629",
+      "pe_ttm": 484.79,
+      "pe": 533.07,
+      "pb": 18.58,
+      "ps_ttm": 108.18,
+      "turnover_rate": 7.45,
+      "volume_ratio": 0.96,
+      "total_mv_yi": 662.96
+    },
+    "summary": [
+      "公司标签显示其位于江苏，所属行业为机械基件，上市板块为科创板。",
+      "主营方向聚焦精密传动部件，谐波减速器与机器人产业链景气度相关性较高。",
+      "估值快照显示 PE(TTM)、PB 与 PS(TTM) 均处于较高绝对水平，说明市场对成长性已有较强预期。",
+      "基本面跟踪应继续关注收入增速、毛利率、净利率、研发投入、产能利用率和大客户结构。"
+    ],
+    "data_status": "使用 Tushare Pro stock_basic / daily_basic 的 2026-06-29 快照；利润表、资产负债表和现金流接口需要更高权限。",
+    "sources": [
+      {
+        "name": "Tushare Pro stock_basic / daily_basic",
+        "url": "https://www.tushare.pro/"
+      },
+      {
+        "name": "上海证券交易所 688017 公司信息",
+        "url": "https://www.sse.com.cn/assortment/stock/list/info/company/index.shtml?COMPANY_CODE=688017"
+      },
+      {
+        "name": "绿的谐波公司官网",
+        "url": "https://www.leaderdrive.com/"
+      }
+    ]
+  },
+  "recent_rows": [
+    {
+      "trade_date": "2026-06-29",
+      "open": 368.22,
+      "high": 371.98,
+      "low": 345.0,
+      "close": 361.62,
+      "pct_chg": -2.12,
+      "vol": 136530.75
+    },
+    {
+      "trade_date": "2026-06-26",
+      "open": 385.66,
+      "high": 396.76,
+      "low": 368.95,
+      "close": 369.46,
+      "pct_chg": -5.51,
+      "vol": 121304.98
+    },
+    {
+      "trade_date": "2026-06-25",
+      "open": 380.0,
+      "high": 404.0,
+      "low": 373.0,
+      "close": 391.0,
+      "pct_chg": 2.04,
+      "vol": 146611.75
+    },
+    {
+      "trade_date": "2026-06-24",
+      "open": 378.0,
+      "high": 394.5,
+      "low": 368.0,
+      "close": 383.18,
+      "pct_chg": 1.23,
+      "vol": 121114.73
+    },
+    {
+      "trade_date": "2026-06-23",
+      "open": 381.0,
+      "high": 394.99,
+      "low": 366.15,
+      "close": 378.53,
+      "pct_chg": -3.76,
+      "vol": 127751.93
+    },
+    {
+      "trade_date": "2026-06-22",
+      "open": 404.15,
+      "high": 415.76,
+      "low": 376.33,
+      "close": 393.31,
+      "pct_chg": -3.6,
+      "vol": 194356.79
+    },
+    {
+      "trade_date": "2026-06-18",
+      "open": 381.6,
+      "high": 413.82,
+      "low": 375.64,
+      "close": 408.01,
+      "pct_chg": 6.92,
+      "vol": 192016.16
+    },
+    {
+      "trade_date": "2026-06-17",
+      "open": 370.88,
+      "high": 384.98,
+      "low": 364.47,
+      "close": 381.6,
+      "pct_chg": 1.43,
+      "vol": 130002.67
+    },
+    {
+      "trade_date": "2026-06-16",
+      "open": 371.99,
+      "high": 384.97,
+      "low": 363.5,
+      "close": 376.22,
+      "pct_chg": 0.97,
+      "vol": 143780.36
+    },
+    {
+      "trade_date": "2026-06-15",
+      "open": 355.0,
+      "high": 373.9,
+      "low": 347.98,
+      "close": 372.62,
+      "pct_chg": 6.16,
+      "vol": 150832.85
+    },
+    {
+      "trade_date": "2026-06-12",
+      "open": 372.18,
+      "high": 386.99,
+      "low": 348.0,
+      "close": 351.0,
+      "pct_chg": -4.36,
+      "vol": 224884.97
+    },
+    {
+      "trade_date": "2026-06-11",
+      "open": 402.1,
+      "high": 407.96,
+      "low": 362.0,
+      "close": 367.0,
+      "pct_chg": -13.44,
+      "vol": 217755.41
+    }
+  ],
+  "assets": {
+    "kline": "assets/688017_kline.png",
+    "technical": "assets/688017_technical.png",
+    "csv": "data/688017_daily.csv"
+  }
+}
