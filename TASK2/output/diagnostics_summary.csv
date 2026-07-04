@@ -1,0 +1,3 @@
+﻿source_file,stock_name,ts_code,rows,columns,start_date,end_date,duplicate_trade_dates,total_missing_values
+三一重工行情数据.csv,三一重工,600031.SH,129,13,2025-01-02,2025-07-16,0,0
+平安集团行情数据.csv,平安集团,000001.SZ,372,13,2024-01-02,2025-07-17,0,0
