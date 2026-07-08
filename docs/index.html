@@ -200,7 +200,7 @@
 
       .grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 16px;
       }
 
@@ -331,6 +331,12 @@
         font-size: 13px;
       }
 
+      @media (max-width: 1100px) {
+        .grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
       @media (max-width: 900px) {
         .topline,
         .section-head {
@@ -342,7 +348,6 @@
           text-align: left;
         }
 
-        .grid,
         .summary-grid {
           grid-template-columns: 1fr;
         }
@@ -369,6 +374,7 @@
           grid-template-columns: 1fr;
         }
 
+        .grid,
         .links {
           grid-template-columns: 1fr;
         }
@@ -389,16 +395,17 @@
             <a href="task1.html">TASK1</a>
             <a href="task2.html">TASK2</a>
             <a href="task3.html">TASK3</a>
+            <a href="task4.html">TASK4</a>
             <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning">GitHub 仓库</a>
           </nav>
         </div>
         <h1>量化学习作业集</h1>
         <p class="lead">
-          这里整理了从行情数据获取、技术指标分析，到双均线策略回测的学习成果。页面用于快速访问报告、代码和输出文件。
+          这里整理了从行情数据获取、技术指标分析，到双均线与海龟策略回测的学习成果。页面用于快速访问报告、代码和输出文件。
         </p>
         <div class="hero-actions">
-          <a class="button" href="task3.html">查看 TASK3</a>
-          <a class="button secondary" href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK3/%E8%96%9B%E6%99%BA%E9%B8%A3TASK3.pdf">打开最新 PDF</a>
+          <a class="button" href="task4.html">查看 TASK4</a>
+          <a class="button secondary" href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK4/%E8%96%9B%E6%99%BA%E9%B8%A3TASK4.pdf">打开最新 PDF</a>
         </div>
       </div>
     </header>
@@ -460,7 +467,7 @@
           <article class="card">
             <div class="meta">
               <span class="task-number">TASK3</span>
-              <span class="status">最新</span>
+              <span class="status">已完成</span>
             </div>
             <h3>双均线策略与回测分析</h3>
             <p>解释金叉、死叉、最大回撤、夏普比率和累计回报，完成多股票、多周期双均线策略回测。</p>
@@ -476,6 +483,28 @@
               <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK3/%E8%96%9B%E6%99%BA%E9%B8%A3TASK3.pdf">PDF</a>
               <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK3/analysis_report.md">报告</a>
               <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK3/analyze_double_ma_strategy.py">代码</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="meta">
+              <span class="task-number">TASK4</span>
+              <span class="status">最新</span>
+            </div>
+            <h3>海龟策略与通道突破回测</h3>
+            <p>解释海龟法则、高低点通道、ATR 和止损条件，并完成多股票、多通道周期策略回测。</p>
+            <ul class="tags">
+              <li>海龟策略</li>
+              <li>Donchian</li>
+              <li>ATR</li>
+              <li>止损</li>
+              <li>回测</li>
+            </ul>
+            <div class="links">
+              <a href="task4.html">详情</a>
+              <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK4/%E8%96%9B%E6%99%BA%E9%B8%A3TASK4.pdf">PDF</a>
+              <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK4/analysis_report.md">报告</a>
+              <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK4/analyze_turtle_strategy.py">代码</a>
             </div>
           </article>
         </div>
@@ -494,6 +523,7 @@
               <li>TASK1 负责行情获取和基础概念梳理。</li>
               <li>TASK2 负责技术指标计算、诊断和图表输出。</li>
               <li>TASK3 负责双均线策略模拟交易、指标评估和正式提交 PDF。</li>
+              <li>TASK4 负责海龟策略、通道突破、ATR 止损和参数对比分析。</li>
             </ul>
           </div>
           <div class="panel">
@@ -501,7 +531,8 @@
             <ul>
               <li>均线策略更适合趋势明确的市场环境。</li>
               <li>短周期均线反应快，但更容易在震荡市中产生假信号。</li>
-              <li>回测需要同时观察收益和风险，不能只看累计回报。</li>
+              <li>海龟策略适合捕捉持续性突破，但在震荡市中也会受到假突破影响。</li>
+              <li>回测需要同时观察收益、回撤、夏普比率和交易次数，不能只看累计回报。</li>
             </ul>
           </div>
         </div>
@@ -516,8 +547,8 @@
           <div class="link-row">
             <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning">仓库首页</a>
             <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/commits/main">提交记录</a>
-            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/tree/main/TASK3/output">TASK3 回测输出</a>
-            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/tree/main/TASK3/figures">TASK3 图表</a>
+            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/tree/main/TASK4/output">TASK4 回测输出</a>
+            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/tree/main/TASK4/figures">TASK4 图表</a>
           </div>
         </div>
       </section>
