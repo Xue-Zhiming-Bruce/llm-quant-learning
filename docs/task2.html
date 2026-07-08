@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TASK2 | 技术指标与行情诊断</title>
+    <link rel="stylesheet" href="task-detail.css" />
+  </head>
+  <body>
+    <header>
+      <div class="shell">
+        <div class="topline">
+          <div class="brand">
+            <a href="index.html">返回首页</a>
+            <a href="task1.html">TASK1</a>
+            <a href="task3.html">TASK3</a>
+          </div>
+          <nav aria-label="外部链接">
+            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/tree/main/TASK2">GitHub 目录</a>
+            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK2/%E8%96%9B%E6%99%BA%E9%B8%A3TASK2.pdf">提交 PDF</a>
+          </nav>
+        </div>
+        <p class="eyebrow">TASK2 · 技术指标 · 数据诊断</p>
+        <h1>RSI、MACD、布林带与 ATR 指标分析</h1>
+        <p class="lead">
+          本任务读取已存储的股票行情数据，完成数据诊断、技术指标计算、图表绘制和中文分析报告输出。
+        </p>
+        <div class="actions">
+          <a class="button" href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK2/analysis_report.md">阅读报告</a>
+          <a class="button secondary" href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK2/analyze_technical_indicators.py">查看代码</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="notice" aria-label="学习用途说明">
+        <strong>学习用途</strong>
+        <p>页面内容仅用于课程学习和数据分析练习，不构成任何投资建议。</p>
+      </section>
+
+      <section class="stats" aria-label="任务概览">
+        <article class="stat">
+          <span>分析股票</span>
+          <strong>000001.SZ / 600031.SH</strong>
+        </article>
+        <article class="stat">
+          <span>核心指标</span>
+          <strong>RSI、MACD、布林带</strong>
+        </article>
+        <article class="stat">
+          <span>扩展指标</span>
+          <strong>ATR(14)</strong>
+        </article>
+        <article class="stat">
+          <span>输出内容</span>
+          <strong>报告 + CSV + PNG</strong>
+        </article>
+      </section>
+
+      <section aria-labelledby="diagnostics-title">
+        <div class="section-head">
+          <h2 id="diagnostics-title">数据诊断结果</h2>
+          <p>先检查数据质量，再计算指标，避免在缺失或重复数据上做分析。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>股票</th>
+                <th>代码</th>
+                <th>行数</th>
+                <th>开始日期</th>
+                <th>结束日期</th>
+                <th>重复交易日</th>
+                <th>缺失值总数</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>三一重工</td>
+                <td>600031.SH</td>
+                <td>129</td>
+                <td>2025-01-02</td>
+                <td>2025-07-16</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>平安集团</td>
+                <td>000001.SZ</td>
+                <td>372</td>
+                <td>2024-01-02</td>
+                <td>2025-07-17</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="indicator-title">
+        <div class="section-head">
+          <h2 id="indicator-title">指标解释</h2>
+          <p>这些指标分别从动量、趋势、波动区间和真实波幅角度观察行情。</p>
+        </div>
+        <div class="two-column">
+          <div class="panel">
+            <h3>RSI 与 MACD</h3>
+            <ul>
+              <li>RSI 衡量上涨力度和下跌力度的相对强弱，常用于观察超买超卖和短期动能变化。</li>
+              <li>MACD 用短周期 EMA 和长周期 EMA 的差值观察趋势方向与动能变化。</li>
+              <li>两者都可能在震荡行情中产生假信号，因此更适合与其它指标共同判断。</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>布林带与 ATR</h3>
+            <ul>
+              <li>布林带使用均线和标准差描述价格相对位置和波动区间。</li>
+              <li>ATR 衡量真实波幅，不判断方向，常用于动态止损和仓位控制。</li>
+              <li>价格触及布林带上下轨不等于一定反转，需要结合趋势和成交量理解。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="snapshot-title">
+        <div class="section-head">
+          <h2 id="snapshot-title">最新交易日指标快照</h2>
+          <p>以下数值来自脚本输出的最新交易日指标摘要。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>股票</th>
+                <th>日期</th>
+                <th>收盘价</th>
+                <th>RSI14</th>
+                <th>MACD</th>
+                <th>Signal</th>
+                <th>BB 中轨</th>
+                <th>ATR14</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>三一重工</td>
+                <td>2025-07-16</td>
+                <td>18.7100</td>
+                <td>55.6464</td>
+                <td>0.1559</td>
+                <td>0.0609</td>
+                <td>18.2670</td>
+                <td>0.3253</td>
+              </tr>
+              <tr>
+                <td>平安集团</td>
+                <td>2025-07-17</td>
+                <td>12.5900</td>
+                <td>56.3944</td>
+                <td>0.2715</td>
+                <td>0.2900</td>
+                <td>12.4675</td>
+                <td>0.2607</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="figures-title">
+        <div class="section-head">
+          <h2 id="figures-title">技术指标图</h2>
+          <p>图中包含收盘价和布林带、RSI、MACD、ATR 四组视角。</p>
+        </div>
+        <div class="figures">
+          <figure class="figure-card">
+            <img src="https://raw.githubusercontent.com/Xue-Zhiming-Bruce/llm-quant-learning/main/TASK2/figures/000001.SZ_technical_indicators.png" alt="000001.SZ 技术指标图" />
+            <figcaption>
+              <strong>图1 平安集团技术指标综合图</strong>
+              该图用于观察价格相对布林带的位置、动量变化以及波动幅度。
+            </figcaption>
+          </figure>
+          <figure class="figure-card">
+            <img src="https://raw.githubusercontent.com/Xue-Zhiming-Bruce/llm-quant-learning/main/TASK2/figures/600031.SH_technical_indicators.png" alt="600031.SH 技术指标图" />
+            <figcaption>
+              <strong>图2 三一重工技术指标综合图</strong>
+              图中 MACD 和 RSI 可辅助判断趋势动能，ATR 可观察波动是否扩大。
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section aria-labelledby="files-title">
+        <div class="section-head">
+          <h2 id="files-title">相关文件</h2>
+          <p>点击进入 GitHub 查看源文件和输出。</p>
+        </div>
+        <div class="panel">
+          <div class="link-row">
+            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK2/analyze_technical_indicators.py">分析脚本</a>
+            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK2/analysis_report.md">Markdown 报告</a>
+            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/tree/main/TASK2/output">输出 CSV</a>
+            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK2/%E8%96%9B%E6%99%BA%E9%B8%A3TASK2.pdf">提交 PDF</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell">
+        <a href="index.html">返回作业集首页</a>
+      </div>
+    </footer>
+  </body>
+</html>

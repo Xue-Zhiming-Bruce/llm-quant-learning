@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TASK1 | 量化交易基础与数据获取</title>
+    <link rel="stylesheet" href="task-detail.css" />
+  </head>
+  <body>
+    <header>
+      <div class="shell">
+        <div class="topline">
+          <div class="brand">
+            <a href="index.html">返回首页</a>
+            <a href="task2.html">TASK2</a>
+            <a href="task3.html">TASK3</a>
+          </div>
+          <nav aria-label="外部链接">
+            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/tree/main/TASK1">GitHub 目录</a>
+            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK1/fetch_stock_data.py">核心代码</a>
+          </nav>
+        </div>
+        <p class="eyebrow">TASK1 · 数据获取 · 基础概念</p>
+        <h1>量化交易基础与沪深股票数据获取</h1>
+        <p class="lead">
+          本任务梳理量化交易、K 线、基本面和技术面的基础概念，并用 Python 获取 688017.SH 过去一年的日线行情数据。
+        </p>
+        <div class="actions">
+          <a class="button" href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK1/README.md">阅读说明</a>
+          <a class="button secondary" href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK1/data/688017.SH_daily_20250629_20260629.csv">查看 CSV</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="notice" aria-label="学习用途说明">
+        <strong>学习用途</strong>
+        <p>页面内容仅用于课程学习和数据分析练习，不构成任何投资建议。</p>
+      </section>
+
+      <section class="stats" aria-label="任务概览">
+        <article class="stat">
+          <span>示例股票</span>
+          <strong>688017.SH</strong>
+        </article>
+        <article class="stat">
+          <span>数据区间</span>
+          <strong>2025-06-30 至 2026-06-29</strong>
+        </article>
+        <article class="stat">
+          <span>数据频率</span>
+          <strong>日线</strong>
+        </article>
+        <article class="stat">
+          <span>输出形式</span>
+          <strong>CSV + 收盘价图</strong>
+        </article>
+      </section>
+
+      <section aria-labelledby="goal-title">
+        <div class="section-head">
+          <h2 id="goal-title">任务目标</h2>
+          <p>先建立概念，再完成可复用的数据获取脚本。</p>
+        </div>
+        <div class="two-column">
+          <div class="panel">
+            <h3>学习内容</h3>
+            <ul>
+              <li>理解量化交易相对手工交易的优势：纪律性、数据处理能力、回测能力和系统化风控。</li>
+              <li>解释 K 线、基本面、技术面等后续任务会反复使用的基础概念。</li>
+              <li>掌握通过 Tushare Pro 获取沪深股票历史行情数据的基本流程。</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>实现内容</h3>
+            <ul>
+              <li>脚本支持通过参数切换股票代码和起止日期。</li>
+              <li>输出字段包括开盘价、最高价、最低价、收盘价、涨跌幅、成交量和成交额等。</li>
+              <li>保存 CSV 数据，并生成收盘价走势可视化图。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="process-title">
+        <div class="section-head">
+          <h2 id="process-title">实现流程</h2>
+          <p>从环境配置到数据落盘，保持后续任务可复用。</p>
+        </div>
+        <ol class="process">
+          <li>
+            <strong>配置 Token</strong>
+            <span>通过环境变量或本地 .env 文件配置 Tushare Token，避免把敏感信息写入代码。</span>
+          </li>
+          <li>
+            <strong>请求行情</strong>
+            <span>调用 Tushare Pro 日线接口获取指定股票在目标区间内的交易数据。</span>
+          </li>
+          <li>
+            <strong>清洗排序</strong>
+            <span>按交易日期排序，保留后续分析需要的价格、成交量和成交额字段。</span>
+          </li>
+          <li>
+            <strong>保存输出</strong>
+            <span>生成 CSV 文件和收盘价走势图，作为 TASK2 和 TASK3 的输入基础。</span>
+          </li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="figures-title">
+        <div class="section-head">
+          <h2 id="figures-title">图表与数据</h2>
+          <p>收盘价图帮助快速观察价格趋势，CSV 则用于后续技术指标和策略回测。</p>
+        </div>
+        <div class="figures">
+          <figure class="figure-card wide-figure">
+            <img src="https://raw.githubusercontent.com/Xue-Zhiming-Bruce/llm-quant-learning/main/TASK1/figures/688017.SH_close_20250629_20260629.png" alt="688017.SH 收盘价走势图" />
+            <figcaption>
+              <strong>图1 688017.SH 近一年收盘价走势</strong>
+              该图用于观察价格趋势和波动区间，是后续计算均线、收益率和回撤的基础。
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section aria-labelledby="files-title">
+        <div class="section-head">
+          <h2 id="files-title">相关文件</h2>
+          <p>点击进入 GitHub 查看源文件。</p>
+        </div>
+        <div class="panel">
+          <div class="link-row">
+            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK1/fetch_stock_data.py">fetch_stock_data.py</a>
+            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK1/README.md">TASK1 README</a>
+            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK1/data/688017.SH_daily_20250629_20260629.csv">行情 CSV</a>
+            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/tree/main/TASK1/figures">图表目录</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell">
+        <a href="index.html">返回作业集首页</a>
+      </div>
+    </footer>
+  </body>
+</html>
