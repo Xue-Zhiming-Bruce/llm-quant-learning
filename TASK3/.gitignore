@@ -1,0 +1,4 @@
+.cache/
+.matplotlib/
+__pycache__/
+pdf_render/
