@@ -1,0 +1,4 @@
+model,TN,FP,FN,TP
+Logistic Regression,41,1,2,70
+Decision Tree,37,5,2,70
+Random Forest,39,3,4,68

@@ -1,0 +1,13 @@
+model,label,precision,recall,f1-score,support
+Logistic Regression,class_0,0.596321,0.994752,0.745650,2477.000000
+Logistic Regression,class_1,0.434783,0.005959,0.011758,1678.000000
+Logistic Regression,macro avg,0.515552,0.500356,0.378704,4155.000000
+Logistic Regression,weighted avg,0.531084,0.595427,0.449267,4155.000000
+Decision Tree,class_0,0.631579,0.818732,0.713080,2477.000000
+Decision Tree,class_1,0.524364,0.294994,0.377574,1678.000000
+Decision Tree,macro avg,0.577972,0.556863,0.545327,4155.000000
+Decision Tree,weighted avg,0.588280,0.607220,0.577586,4155.000000
+Random Forest,class_0,0.635987,0.806217,0.711056,2477.000000
+Random Forest,class_1,0.527094,0.318832,0.397326,1678.000000
+Random Forest,macro avg,0.581540,0.562525,0.554191,4155.000000
+Random Forest,weighted avg,0.592010,0.609386,0.584356,4155.000000

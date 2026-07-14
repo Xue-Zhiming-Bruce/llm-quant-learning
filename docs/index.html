@@ -200,7 +200,7 @@
 
       .grid {
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 16px;
       }
 
@@ -396,16 +396,17 @@
             <a href="task2.html">TASK2</a>
             <a href="task3.html">TASK3</a>
             <a href="task4.html">TASK4</a>
+            <a href="task5.html">TASK5</a>
             <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning">GitHub 仓库</a>
           </nav>
         </div>
         <h1>量化学习作业集</h1>
         <p class="lead">
-          这里整理了从行情数据获取、技术指标分析，到双均线与海龟策略回测的学习成果。页面用于快速访问报告、代码和输出文件。
+          这里整理了从行情数据获取、技术指标分析、策略回测，到机器学习分类模型评价的学习成果。页面用于快速访问报告、代码和输出文件。
         </p>
         <div class="hero-actions">
-          <a class="button" href="task4.html">查看 TASK4</a>
-          <a class="button secondary" href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK4/%E8%96%9B%E6%99%BA%E9%B8%A3TASK4.pdf">打开最新 PDF</a>
+          <a class="button" href="task5.html">查看 TASK5</a>
+          <a class="button secondary" href="files/%E8%96%9B%E6%99%BA%E9%B8%A3TASK5.pdf">打开最新 PDF</a>
         </div>
       </div>
     </header>
@@ -489,7 +490,7 @@
           <article class="card">
             <div class="meta">
               <span class="task-number">TASK4</span>
-              <span class="status">最新</span>
+              <span class="status">已完成</span>
             </div>
             <h3>海龟策略与通道突破回测</h3>
             <p>解释海龟法则、高低点通道、ATR 和止损条件，并完成多股票、多通道周期策略回测。</p>
@@ -505,6 +506,28 @@
               <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK4/%E8%96%9B%E6%99%BA%E9%B8%A3TASK4.pdf">PDF</a>
               <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK4/analysis_report.md">报告</a>
               <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK4/analyze_turtle_strategy.py">代码</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="meta">
+              <span class="task-number">TASK5</span>
+              <span class="status">最新</span>
+            </div>
+            <h3>分类模型与 ROC/AUC 评价</h3>
+            <p>解释逻辑回归、决策树和随机森林，使用乳腺癌与股票数据完成二分类训练、混淆矩阵、AUC 和 ROC 曲线评价。</p>
+            <ul class="tags">
+              <li>分类模型</li>
+              <li>混淆矩阵</li>
+              <li>ROC</li>
+              <li>AUC</li>
+              <li>scikit-learn</li>
+            </ul>
+            <div class="links">
+              <a href="task5.html">详情</a>
+              <a href="files/%E8%96%9B%E6%99%BA%E9%B8%A3TASK5.pdf">PDF</a>
+              <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK5/analysis_report.md">报告</a>
+              <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK5/analyze_classification.py">代码</a>
             </div>
           </article>
         </div>
@@ -524,6 +547,7 @@
               <li>TASK2 负责技术指标计算、诊断和图表输出。</li>
               <li>TASK3 负责双均线策略模拟交易、指标评估和正式提交 PDF。</li>
               <li>TASK4 负责海龟策略、通道突破、ATR 止损和参数对比分析。</li>
+              <li>TASK5 负责二分类模型训练、混淆矩阵、ROC/AUC 和样本外评价。</li>
             </ul>
           </div>
           <div class="panel">
@@ -533,6 +557,7 @@
               <li>短周期均线反应快，但更容易在震荡市中产生假信号。</li>
               <li>海龟策略适合捕捉持续性突破，但在震荡市中也会受到假突破影响。</li>
               <li>回测需要同时观察收益、回撤、夏普比率和交易次数，不能只看累计回报。</li>
+              <li>分类模型需要结合混淆矩阵、召回率和 AUC，不能只看准确率。</li>
             </ul>
           </div>
         </div>
@@ -549,6 +574,8 @@
             <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/commits/main">提交记录</a>
             <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/tree/main/TASK4/output">TASK4 回测输出</a>
             <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/tree/main/TASK4/figures">TASK4 图表</a>
+            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/tree/main/TASK5/output">TASK5 模型输出</a>
+            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/tree/main/TASK5/figures">TASK5 ROC 图表</a>
           </div>
         </div>
       </section>
