@@ -1,0 +1,25 @@
+{
+  "source": "/Users/xuezhiming/Desktop/Projects/llm quant learning/TASK6/model_data.csv",
+  "rows": 39616,
+  "stocks": 4281,
+  "features": 26,
+  "train_rows": 26953,
+  "test_rows": 12663,
+  "train_dates": [
+    "2020-03-31",
+    "2020-06-30",
+    "2020-09-30",
+    "2020-12-31",
+    "2021-03-31",
+    "2021-06-30",
+    "2021-09-30"
+  ],
+  "test_dates": [
+    "2021-12-31",
+    "2022-03-31",
+    "2022-06-30"
+  ],
+  "selection_fraction": 0.2,
+  "transaction_cost": 0.001,
+  "target": "Next_Ret: return from the observation date to the next quarter"
+}

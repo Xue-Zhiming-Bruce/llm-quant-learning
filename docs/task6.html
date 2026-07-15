@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TASK6 | 机器学习选股策略与回测</title>
+    <link rel="stylesheet" href="task-detail.css" />
+  </head>
+  <body>
+    <header>
+      <div class="shell">
+        <div class="topline">
+          <div class="brand">
+            <a href="index.html">返回首页</a>
+            <a href="task5.html">TASK5</a>
+          </div>
+          <nav aria-label="外部链接">
+            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/tree/main/TASK6">GitHub 目录</a>
+            <a href="files/%E8%96%9B%E6%99%BA%E9%B8%A3TASK6.pdf">提交 PDF</a>
+          </nav>
+        </div>
+        <p class="eyebrow">TASK6 · 因子工程 · 收益预测 · 选股回测</p>
+        <h1>机器学习选股策略与时间外回测</h1>
+        <p class="lead">
+          使用 A 股季度基本面截面数据预测下一季度收益，比较岭回归、决策树与随机森林，并按预测排名构建等权投资组合。
+        </p>
+        <div class="actions">
+          <a class="button" href="files/%E8%96%9B%E6%99%BA%E9%B8%A3TASK6.pdf">查看提交 PDF</a>
+          <a class="button secondary" href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK6/analyze_ml_strategy.py">查看回测代码</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="notice" aria-label="学习用途说明">
+        <strong>学习用途</strong>
+        <p>本页面展示课程研究和历史回测结果，不构成任何投资建议或收益承诺。</p>
+      </section>
+
+      <section class="stats" aria-label="任务概览">
+        <article class="stat"><span>季度样本</span><strong>39,616</strong></article>
+        <article class="stat"><span>测试季度</span><strong>3 个</strong></article>
+        <article class="stat"><span>随机森林 Rank IC</span><strong>0.2466</strong></article>
+        <article class="stat"><span>策略累计收益</span><strong>0.52%</strong></article>
+      </section>
+
+      <section aria-labelledby="design-title">
+        <div class="section-head">
+          <h2 id="design-title">研究设计</h2>
+          <p>严格按时间划分完整季度，避免随机切分导致未来信息进入训练集。</p>
+        </div>
+        <div class="two-column">
+          <div class="panel">
+            <h3>变量与模型</h3>
+            <ul>
+              <li>自变量包括估值、市值、盈利成长、资产成长和现金流增长等基本面因子。</li>
+              <li>衍生盈利收益率、账面市值比、销售收益率及成长复合指标。</li>
+              <li>应变量为样本日期之后一个季度的个股收益率 Next_Ret。</li>
+              <li>比较岭回归、单棵决策树和 300 棵树组成的随机森林。</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>交易规则</h3>
+            <ul>
+              <li>前 7 个季度训练，后 3 个季度作为完全时间外测试集。</li>
+              <li>每季度选择预测收益排名最高的 20% 股票并等权持有。</li>
+              <li>根据相邻季度持仓变化计算换手率，并扣除 0.1% 交易成本。</li>
+              <li>以测试季度全市场股票等权收益作为基准。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="prediction-title">
+        <div class="section-head">
+          <h2 id="prediction-title">模型预测效果</h2>
+          <p>收益绝对值难以精确预测，选股策略更重视截面排序能力。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>模型</th><th>MAE</th><th>RMSE</th><th>R²</th><th>Rank IC</th><th>方向准确率</th></tr></thead>
+            <tbody>
+              <tr><td>岭回归</td><td>0.1866</td><td>0.2376</td><td>-0.3262</td><td>0.1483</td><td>30.75%</td></tr>
+              <tr><td>决策树</td><td>0.1914</td><td>0.2420</td><td>-0.3759</td><td>0.1716</td><td>29.82%</td></tr>
+              <tr><td>随机森林</td><td>0.1882</td><td class="positive">0.2375</td><td>-0.3249</td><td class="positive">0.2466</td><td class="positive">30.79%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="backtest-title">
+        <div class="section-head">
+          <h2 id="backtest-title">测试集回测结果</h2>
+          <p>随机森林的累计收益、夏普比率和最大回撤均优于另外两个模型。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>组合</th><th>累计收益</th><th>年化收益</th><th>年化波动率</th><th>夏普比率</th><th>最大回撤</th></tr></thead>
+            <tbody>
+              <tr><td>岭回归</td><td>-2.11%</td><td>-2.81%</td><td>11.68%</td><td>-0.20</td><td>-5.10%</td></tr>
+              <tr><td>决策树</td><td>-5.87%</td><td>-7.75%</td><td>14.98%</td><td>-0.48</td><td>-6.14%</td></tr>
+              <tr><td>随机森林</td><td class="positive">0.52%</td><td class="positive">0.70%</td><td>11.59%</td><td class="positive">0.10</td><td class="positive">-3.84%</td></tr>
+              <tr><td>全市场等权基准</td><td class="negative">-15.91%</td><td>-20.63%</td><td>11.41%</td><td>-1.93</td><td>-15.91%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="figures-title">
+        <div class="section-head">
+          <h2 id="figures-title">统计图与解读</h2>
+          <p>测试区间较短，结果用于展示研究流程，不代表策略长期稳定有效。</p>
+        </div>
+        <div class="figures">
+          <figure class="figure-card wide-figure">
+            <img src="assets/task6_cumulative_nav.png" alt="三种机器学习策略与等权基准累计净值" />
+            <figcaption><strong>图1 测试集累计净值</strong>随机森林期末净值最高，三种模型在测试期均显著跑赢全市场等权基准。</figcaption>
+          </figure>
+          <figure class="figure-card">
+            <img src="assets/task6_quarterly_returns.png" alt="测试集各季度策略收益率" />
+            <figcaption><strong>图2 各季度收益率</strong>模型在两个下跌季度的亏损幅度小于基准，超额收益主要来自相对抗跌能力。</figcaption>
+          </figure>
+          <figure class="figure-card">
+            <img src="assets/task6_model_comparison.png" alt="三种模型预测效果对比" />
+            <figcaption><strong>图3 模型预测效果对比</strong>随机森林 Rank IC 最高，但所有模型方向准确率均较低。</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section aria-labelledby="takeaway-title">
+        <div class="section-head">
+          <h2 id="takeaway-title">结论与局限</h2>
+          <p>模型复杂度不等于稳定收益，必须坚持时间外验证。</p>
+        </div>
+        <div class="panel">
+          <ul>
+            <li>随机森林表现最佳，与其最高的 Rank IC 和非线性表达能力一致。</li>
+            <li>三个模型的 R² 都为负，说明金融收益绝对值预测仍然困难。</li>
+            <li>测试集只有 3 个季度，年化收益、夏普比率和胜率的统计稳定性较弱。</li>
+            <li>进一步研究应加入更长历史、真实财报披露日、停牌涨跌停约束及滚动训练。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section aria-labelledby="files-title">
+        <div class="section-head">
+          <h2 id="files-title">相关文件</h2>
+          <p>报告、代码、模型输出、图表和正式提交 PDF 均可复查。</p>
+        </div>
+        <div class="panel">
+          <div class="link-row">
+            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK6/analyze_ml_strategy.py">回测脚本</a>
+            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/blob/main/TASK6/analysis_report.md">分析报告</a>
+            <a href="https://github.com/Xue-Zhiming-Bruce/llm-quant-learning/tree/main/TASK6/output">模型与回测输出</a>
+            <a href="files/%E8%96%9B%E6%99%BA%E9%B8%A3TASK6.pdf">提交 PDF</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer><div class="shell"><a href="index.html">返回作业集首页</a></div></footer>
+  </body>
+</html>
